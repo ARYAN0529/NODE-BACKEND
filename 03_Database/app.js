@@ -31,7 +31,7 @@ app.get ('/read', async (req , res ) => {
         res.send(readuser);
     })
 
-    app.get('/delete' , async (req , res ) => {
+app.get('/delete' , async (req , res ) => {
         let deletes = await userModel.findOneAndDelete({ name: "Aryan Sharma" }) ;
         res.send(deletes);
     })

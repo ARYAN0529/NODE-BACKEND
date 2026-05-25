@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-950 min-h-screen p-8">
+
+    <a class="inline-flex items-center gap-1 text-sm text-blue-400 hover:opacity-70 mb-8" href="/">
+        ← Back to Home
+    </a>
+
+    <h1 class="text-2xl font-medium text-white mb-1">All Users</h1>
+    <p class="text-zinc-500 text-sm mb-6"><%= users.length %> users registered</p>
+
+    <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))">
+
+     <% if (users.length > 0) { %>
+         <% users.forEach(function(user) { %>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-zinc-600 transition-colors">
+
+            <!-- Avatar / Image -->
+            <div class="w-full h-36 bg-zinc-800 flex items-center justify-center">
+                <% if (user.image) { %>
+                    <img class="w-full h-full object-cover" src="<%= user.image %>" alt="<%= user.name %>">
+                <% } else { %>
+                    <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-blue-300 font-medium text-lg">
+                        <%= user.name.charAt(0).toUpperCase() %>
+                    </div>
+                <% } %>
+            </div>
+
+            <!-- Info -->
+            <div class="p-4">
+                <p class="text-white font-medium text-sm mb-0.5"><%= user.name %></p>
+                <p class="text-zinc-500 text-xs mb-4 truncate"><%= user.email %></p>
+                <div class="flex gap-2">
+                    <a class="text-xs px-3 py-1.5 rounded-lg border border-zinc-700 text-zinc-300 hover:bg-zinc-800" href="/edit/<%= user._id %>">Edit</a>
+                    <a class="text-xs px-3 py-1.5 rounded-lg border border-red-900 text-red-400 hover:bg-red-950" href="/delete/<%= user._id %>">Delete</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+        <% } else { %>
+            <p class="text-zinc-500 text-sm col-span-full text-center">No users yet. </p>
+     <% } %>
+       
+        
+
+    </div>
+</body>
+</html>
