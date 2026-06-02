@@ -3,24 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Create User</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
-<body class="bg-zinc-900">
-    <div class="w-full h-full text-white p-10 ">
-       <h1 class="text-3xl tracking-tighter  mb-5 ml-5 mt-5 " >Create User</h1>
-       <div class="ml-5">
-       <form action="/create" method="post" > 
-            <input class="px-5 py-3 border-2 mr-3 rounded-lg outline-none border-zinc-800 bg-transparent " name="name" type="text" placeholder="Name">
-            <input class="px-5 py-3 border-2 mr-3  rounded-lg outline-none border-zinc-800 bg-transparent" name="email"   type="text" placeholder="Email">
-            <input class="px-5 py-3 border-2 mr-3  rounded-lg outline-none border-zinc-800 bg-transparent" name="url" type="text" placeholder="URL">
-            <input class="px-10 py-10 bg-blue-500 text-white rounded-lg ml-3 " type="submit" value="Create User">
-        </form>
-        </div>
+<body class="min-h-screen bg-[#0c0c0e] px-8 py-12 font-sans">
 
-        <a class="text-blue-500 ml-5 mt-5 inline-block" href="/read">View All Users</a>
+    
+    
+    <h1 class="text-3xl mt-5 font-medium  text-[#f1f0f5] tracking-tight mb-1">Create new user</h1>
+    <p class="text-sm text-zinc-500 mb-10">Add a user to your system by filling in the details below.</p>
+
+    <div class="bg-[#13131a] border border-white/8 rounded-2xl p-7 mt-23 max-w-xl">
+        <form action="/create" method="post">
+
+            <div class="mb-5">
+                <label class="block text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Full name</label>
+                <div class="relative flex items-center">
+                    <i class="ti ti-user absolute left-4 text-zinc-600 text-base pointer-events-none"></i>
+                    <input
+                        name="name" type="text" placeholder="e.g. Aryan Sharma"
+                        class="w-full bg-[#0c0c0e] border border-white/10 rounded-xl text-[#f1f0f5] text-sm pl-10 pr-4 py-3 outline-none placeholder:text-zinc-700 focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/10 transition"
+                    >
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Email address</label>
+                <div class="relative flex items-center">
+                    <i class="ti ti-mail absolute left-4 text-zinc-600 text-base pointer-events-none"></i>
+                    <input
+                        name="email" type="text" placeholder="e.g. aryan@example.com"
+                        class="w-full bg-[#0c0c0e] border border-white/10 rounded-xl text-[#f1f0f5] text-sm pl-10 pr-4 py-3 outline-none placeholder:text-zinc-700 focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/10 transition"
+                    >
+                </div>
+            </div>
+
+            <div class="mb-0">
+                <label class="block text-xs font-medium text-zinc-500 uppercase tracking-widest mb-2">Profile URL</label>
+                <div class="relative flex items-center">
+                    <i class="ti ti-link absolute left-4 text-zinc-600 text-base pointer-events-none"></i>
+                    <input
+                        name="url" type="text" placeholder="e.g. https://github.com/aryan"
+                        class="w-full bg-[#0c0c0e] border border-white/10 rounded-xl text-[#f1f0f5] text-sm pl-10 pr-4 py-3 outline-none placeholder:text-zinc-700 focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/10 transition"
+                    >
+                </div>
+            </div>
+
+            <div class="h-px bg-white/5 my-6"></div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit"
+                    class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-sm font-medium px-6 py-3 rounded-xl transition cursor-pointer">
+                    <i class="ti ti-user-plus"></i>
+                    Create user
+                </button>
+                <a href="/read" class="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 text-sm transition">
+                    View all users
+                    <i class="ti ti-arrow-right"></i>
+                </a>
+            </div>
+
+        </form>
+        
     </div>
+
 </body>
 </html>
