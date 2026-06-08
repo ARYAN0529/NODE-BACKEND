@@ -1,13 +1,13 @@
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://127.0.0.1:27017/authtestapp");
+mongoose.connect("mongodb://127.0.0.1:27017/authtest2");
 
 const userSchema = new mongoose.Schema({
-    username : String,
-    email: String,
-    password: String,
-    age : Number
+    username: String,
+    email:String,
+    password:String,
+    age:Number
+
 });
 
-module.exports = mongoose.model('user', userSchema)
-
+module.exports = mongoose.model('user',userSchema);
