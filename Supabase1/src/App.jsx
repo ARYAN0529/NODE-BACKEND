@@ -1,8 +1,12 @@
-import Dashboard from "./dashboad";
+import Form from "./form";
+import Add from "./add";
 
 function App() {
   return (
-    <Dashboard />
+    <>
+      <Form />
+      <Add />
+    </>
   );
 }
 
